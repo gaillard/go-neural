@@ -31,21 +31,26 @@ func Backpropagation(n *neural.Network, in, ideal []float64, speed float64) floa
 	for i := last - 1; i >= 0; i-- {
 		l := n.Layers[i]
 		deltas[i] = make([]float64, len(l.Neurons))
+		di := deltas[i+1]
 		for j, n := range l.Neurons {
+
+			nn := n.Out * (1 - n.Out)
 
 			var sum float64 = 0
 			for k, s := range n.OutSynapses {
-				sum += s.Weight * deltas[i+1][k]
+				sum += s.Weight * di[k]
 			}
 
-			deltas[i][j] = n.Out * (1 - n.Out) * sum
+			deltas[i][j] = nn * sum
 		}
 	}
 
 	for i, l := range n.Layers {
+		di := deltas[i]
 		for j, n := range l.Neurons {
+			dj := di[j] * speed
 			for _, s := range n.InSynapses {
-				s.Weight += speed * deltas[i][j] * s.In
+				s.Weight += dj * s.In
 			}
 		}
 	}
