@@ -1,8 +1,9 @@
 package learn
 
 import (
-	"github.com/NOX73/go-neural"
 	"math"
+
+	"github.com/gaillard/go-neural"
 )
 
 // Math Evaluation with Least squares method.

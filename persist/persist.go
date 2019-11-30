@@ -2,7 +2,7 @@ package persist
 
 import (
 	"encoding/json"
-	"github.com/NOX73/go-neural"
+	"github.com/gaillard/go-neural"
 	"io/ioutil"
 )
 

@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/NOX73/go-neural"
-	"github.com/NOX73/go-neural/persist"
+	"github.com/gaillard/go-neural"
+	"github.com/gaillard/go-neural/persist"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

@@ -1,7 +1,7 @@
 package learn
 
 import (
-	"github.com/NOX73/go-neural"
+	"github.com/gaillard/go-neural"
 )
 
 type Deltas [][]float64

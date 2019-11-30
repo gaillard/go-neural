@@ -1,9 +1,9 @@
 package engine
 
 import (
-	"github.com/NOX73/go-neural"
-	"github.com/NOX73/go-neural/learn"
-	"github.com/NOX73/go-neural/persist"
+	"github.com/gaillard/go-neural"
+	"github.com/gaillard/go-neural/learn"
+	"github.com/gaillard/go-neural/persist"
 )
 
 const (

@@ -1,7 +1,7 @@
 package persist
 
 import (
-	"github.com/NOX73/go-neural"
+	"github.com/gaillard/go-neural"
 	. "launchpad.net/gocheck"
 	"testing"
 )
