@@ -15,8 +15,9 @@ func Learn(n *neural.Network, in, ideal []float64, speed float64) {
 	Backpropagation(n, in, ideal, speed)
 }
 
-func Backpropagation(n *neural.Network, in, ideal []float64, speed float64) {
-	n.Calculate(in)
+// Note the calc returned is before the training update.
+func Backpropagation(n *neural.Network, in, ideal []float64, speed float64) float64 {
+	out := n.Calculate(in)
 
 	deltas := make([][]float64, len(n.Layers))
 
@@ -49,4 +50,5 @@ func Backpropagation(n *neural.Network, in, ideal []float64, speed float64) {
 		}
 	}
 
+	return leastSquares(out, ideal)
 }

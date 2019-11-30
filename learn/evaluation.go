@@ -10,6 +10,10 @@ import (
 func Evaluation(n *neural.Network, in, ideal []float64) float64 {
 	out := n.Calculate(in)
 
+	return leastSquares(out, ideal)
+}
+
+func leastSquares(out, ideal []float64) float64 {
 	var e float64
 	for i, _ := range out {
 		e += math.Pow(out[i]-ideal[i], 2)
